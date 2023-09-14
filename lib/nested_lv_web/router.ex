@@ -17,7 +17,7 @@ defmodule NestedLvWeb.Router do
   scope "/", NestedLvWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", ParentLive
   end
 
   # Other scopes may use custom stacks.

@@ -1,5 +1,21 @@
 # NestedLv
 
+# Problem description
+1. Start the server with `mix phx.server`
+2. Open the browser at `http://localhost:4000`
+3. Stop the server with double `Ctrl+C`
+4. Restart the server with `mix phx.server`
+5. Now `/` page in the browser is redirected to `/null` route.
+
+This is a problem because the same behavior is observed when the server is running in production and is restarted. All opened clients are redirected to `/null`.
+
+# Logs
+Some suspicious in-browser logs are:
+```
+error: unauthorized live_redirect. Falling back to page request {reason: 'stale'}
+socket: disconnected for page nav
+```
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
